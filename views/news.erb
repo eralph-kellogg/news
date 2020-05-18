@@ -24,7 +24,30 @@
 
     <div class="container mt-5">
       <h1>News</h1>
+      <p>
+      <% @headlines.each_index do |i| %>
+        <a href="<%= @links[i] %>"> <%= @headlines[i] %> </a>
+        <br>
+      <% end %>
+      </p>
     </div>
+
+    <div class="container mt-5">
+        <h1> Weather </h1>
+        <h2>Current Weather</h2>
+        <p>
+            <%=@current%>
+        </p>
+
+        <h2>Extended Forecast</h2>
+        <p>
+            <% for day in @extended %>
+                <%=day%> <br>
+            <% end %>
+        </p>
+    </div>
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
