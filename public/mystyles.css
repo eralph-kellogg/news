@@ -1,11 +1,37 @@
 body{
-    background-color: gray;
-    font-family: 'Special Elite', cursive;
+    background-color: lightgray;
+    font-family: 'DM Mono', monospace;
+    font-weight: bold;
+    vertical-align: middle;
+}
+.framed{
+    border-color:lime;
+    border-style: inset;
+    border-width: 25px;
+    border-radius: 5px;
+}
+.headbox{
+    border-color: white;
+    border-style:solid;
+    border-width: 5px;
+    border-radius: 5px; 
 }
 h1{ 
     color:black;
     font-size: 80px;
     text-shadow: 1px 1px 1px purple;
     padding: 20px 20px 20px 20px;
-    font-family: 'Roboto', cursive;
+    font-family: 'DM Mono', monospace;
+}
+.weather2{
+    color:tomato;
+    font-size: 30px;
+    font-style: italic;
+}
+h3{
+    font-size: 20px;
+    font-style: oblique;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px pink;
+    color:navy;
 }

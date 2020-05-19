@@ -8,6 +8,7 @@
     <!-- Google Fonts -->
     <!-- Swap out "Roboto" for the font(s) you want to use -->
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" crossorigin="anonymous">
@@ -23,13 +24,13 @@
   <body>
 
     <div class="container mt-5">
-      <h1>News</h1>
+      <h1 class="framed">News</h1>
       <div class="row">
         <% @headlines.each_index do |i| %>
         <div class= "col-sm-4">
             <img src="<%= @images[i] %>" class= "img-fluid img-thumbnail" alt="Story Image">
         </div>
-        <div class= "col-sm-8">
+        <div class= "headbox col-sm-8">
             <a href="<%= @links[i] %>"> <%= @headlines[i] %> </a>
         </div>
         <% end %>
@@ -38,17 +39,31 @@
     <hr>
 
     <div class="container mt-5">
-        <h1> Weather </h1>
-        <h2>Current Weather at Lat <%=@lat%>, Long <%=@long%></h2>
+        <h1 class="framed"> Weather </h1>
+        <h2 class="weather2">Current Weather at Lat <%=@lat%>, Long <%=@long%></h2>
         <p>
             <%=@current%>
         </p>
 
-        <h2>Extended Forecast for Lat <%=@lat%>, Long <%=@long%></h2>
+        <h2 class="weather2">Extended Forecast for Lat <%=@lat%>, Long <%=@long%></h2>
         <p>
-            <% for day in @extended %>
-                <%=day%> <br>
-            <% end %>
+        <div class="row">
+            <% @extended.each_index do |i| %>
+            <div class= "col-sm-3">
+                <%i%>
+                <%if i<1%>
+                    <h3>Tomorrow:</h3>
+                <%elsif i<2 %>
+                    <h3>The Next Day:</h3>
+                <%else%>
+                    <h3>The Day After That:</h3>
+                <%end%>
+            </div>
+            <div class= "col-sm-9">
+                <%= @extended[i] %>
+            </div>
+        <% end %>
+        </div>
         </p>
     </div>
 
