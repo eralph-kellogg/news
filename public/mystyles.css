@@ -3,6 +3,7 @@ body{
     font-family: 'DM Mono', monospace;
     font-weight: bold;
     vertical-align: middle;
+    font-size:20px;
 }
 .framed{
     border-color:lime;

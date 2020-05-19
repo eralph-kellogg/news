@@ -40,27 +40,27 @@
 
     <div class="container mt-5">
         <h1 class="framed"> Weather </h1>
-        <h2 class="weather2">Current Weather at Lat <%=@lat%>, Long <%=@long%></h2>
+        <h2 class="weather2">Current Weather at Lat <%=@lat.truncate(2)%>, Long <%=@long.truncate(2)%></h2>
         <p>
             <%=@current%>
         </p>
 
-        <h2 class="weather2">Extended Forecast for Lat <%=@lat%>, Long <%=@long%></h2>
+        <h2 class="weather2">Extended Forecast for Lat <%=@lat.truncate(2)%>, Long <%=@long.truncate(2)%></h2>
         <p>
         <div class="row">
-            <% @extended.each_index do |i| %>
+            <% @extended.each_index do |j| %>
             <div class= "col-sm-3">
-                <%i%>
-                <%if i<1%>
+                <%j%>
+                <%if j<1%>
                     <h3>Tomorrow:</h3>
-                <%elsif i<2 %>
+                <%elsif j<2 %>
                     <h3>The Next Day:</h3>
                 <%else%>
                     <h3>The Day After That:</h3>
                 <%end%>
             </div>
             <div class= "col-sm-9">
-                <%= @extended[i] %>
+                <%= @extended[j] %>
             </div>
         <% end %>
         </div>
