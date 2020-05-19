@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     
     <!-- Your own CSS -->
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/mystyles.css">
 
     <title>News</title>
   </head>
@@ -24,22 +24,27 @@
 
     <div class="container mt-5">
       <h1>News</h1>
-      <p>
-      <% @headlines.each_index do |i| %>
-        <a href="<%= @links[i] %>"> <%= @headlines[i] %> </a>
-        <br>
-      <% end %>
-      </p>
+      <div class="row">
+        <% @headlines.each_index do |i| %>
+        <div class= "col-sm-4">
+            <img src="<%= @images[i] %>" class= "img-fluid img-thumbnail" alt="Story Image">
+        </div>
+        <div class= "col-sm-8">
+            <a href="<%= @links[i] %>"> <%= @headlines[i] %> </a>
+        </div>
+        <% end %>
+      </div>
     </div>
+    <hr>
 
     <div class="container mt-5">
         <h1> Weather </h1>
-        <h2>Current Weather</h2>
+        <h2>Current Weather at Lat <%=@lat%>, Long <%=@long%></h2>
         <p>
             <%=@current%>
         </p>
 
-        <h2>Extended Forecast</h2>
+        <h2>Extended Forecast for Lat <%=@lat%>, Long <%=@long%></h2>
         <p>
             <% for day in @extended %>
                 <%=day%> <br>
